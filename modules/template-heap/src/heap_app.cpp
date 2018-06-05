@@ -40,12 +40,12 @@ std::string HeapApp::operator()(int argc, const char** argv) {
     return message_;
   }
   try {
-    std::string appname = argv[1];
+    std::string appname = argv[0];
     atal::heap<int> h;
-    int dimension = parseInt(argv[2]);
+    int dimension = parseInt(argv[1]);
     h.setDim(dimension);
 
-    for (int i = 3; argv[i]; i++) {
+    for (int i = 2; argv[i]; i++) {
       h.push(parseInt(argv[i]));
     }
     std::ostringstream stream;
