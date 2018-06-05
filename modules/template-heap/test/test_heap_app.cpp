@@ -55,7 +55,7 @@ TEST_F(HeapAppTest, Can_Detect_Wrong_Number_Format) {
 }
 
 TEST_F(HeapAppTest, Can_Make_Heap_And_Get_Result) {
-  vector<string> args = {"HeapApp", 2", "5", "16", "7", "13"};
+  vector<string> args = {"HeapApp", "2", "5", "16", "7", "13"};
 
   Act(args);
 
