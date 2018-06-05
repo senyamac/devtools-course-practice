@@ -59,5 +59,5 @@ TEST_F(HeapAppTest, Can_Make_Heap_And_Get_Result) {
 
   Act(args);
 
-  Assert("Your heap:\\..*");
+  Assert("Your heap:\.*");
 }

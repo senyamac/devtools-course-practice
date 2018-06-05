@@ -52,9 +52,9 @@ std::string HeapApp::operator()(int argc, const char** argv) {
     stream << "size = " << h.size();
     stream << ", dim = " << h.getDim();
     stream << ", top = " << h.top();
-    /*for (unsigned int i = 0; i < h.size(); i++) {
+    /* for (unsigned int i = 0; i < h.size(); i++) {
       stream << h.getHeap(i) << " ";
-    }*/
+    } */
     stream << " }\n";
     message_ = stream.str();
     return message_;
