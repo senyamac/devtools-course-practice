@@ -1,4 +1,4 @@
-// Copyright 2018 Mayachkin Arcseny
+// Copyright 2018 Mayachkin Arseny
 
 #include "include/heap.hpp"
 #include "include/heap_app.hpp"
