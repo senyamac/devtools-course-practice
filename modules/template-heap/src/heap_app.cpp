@@ -40,11 +40,11 @@ std::string HeapApp::operator()(int argc, const char** argv) {
     return message_;
   }
   try {
-    string appname = argv[1];
-    int dimension = parseInt(argv[2]);
+    std::string appname = argv[0];
+    int dimension = parseInt(argv[1]);
     h.setDim(dimension);
     std::vector<int> array;
-    for (int i = 3; argv[i]; i++) {
+    for (int i = 2; argv[i]; i++) {
       array.push(parseInt(argv[i]));
     }
     
