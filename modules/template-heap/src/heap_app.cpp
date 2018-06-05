@@ -41,13 +41,13 @@ std::string HeapApp::operator()(int argc, const char** argv) {
   }
   try {
     std::string appname = argv[0];
+    atal::heap<int> h;
     int dimension = parseInt(argv[1]);
     h.setDim(dimension);
-    std::vector<int> array;
+
     for (int i = 2; argv[i]; i++) {
-      array.push(parseInt(argv[i]));
+      h.push(parseInt(argv[i]));
     }
-    
     std::ostringstream stream;
     stream << "Your heap:\n{ ";
     stream << "size = " << h.size();
