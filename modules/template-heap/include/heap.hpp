@@ -63,6 +63,7 @@ class heap {
   void push(T value);
   void pop();
   T top();
+  T getHeap(int i);
 
   template<class ...Args>
   void emplace(Args&&... args) { // NOLINT
@@ -201,6 +202,14 @@ void heap<T, Compare>::pop() {
     m_nodes.pop_back();
     shiftDown(0);
   }
+}
+
+template<class T, class Compare>
+T heap<T, Compare>::getHeap(int i) {
+  if (!empty()) {
+      return  m_nodes[i];
+  }
+  return 0;
 }
 }  // namespace atal
 #endif  // MODULES_TEMPLATE_HEAP_INCLUDE_HEAP_HPP_
