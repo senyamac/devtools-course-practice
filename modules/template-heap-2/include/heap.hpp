@@ -205,7 +205,7 @@ void heap<T, Compare>::pop() {
 }
 
 template<class T, class Compare>
-T heap<T, Compare>::getHeap(int i) {s
+T heap<T, Compare>::getHeap(int i) {
   if (!empty()) {
       return  m_nodes[i];
   }
