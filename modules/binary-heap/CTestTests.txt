@@ -36,7 +36,7 @@ add_test(
     COMMAND ${APPLICATION} 2 < 5 16 7 13
 )
 set_tests_properties (${prefix}_can_Work_With_Type_First PROPERTIES
-    PASS_REGULAR_EXPRESSION "Your heap:\n{ size = 4, dim = 2, top = 16 }"
+    PASS_REGULAR_EXPRESSION "Your heap:\n{ size = 4, dim = 2, top = 5 }"
     LABELS "${MODULE}")
 
 add_test(
