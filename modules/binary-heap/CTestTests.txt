@@ -25,7 +25,7 @@ set_tests_properties (${prefix}_can_Detect_Wrong_Number_Format PROPERTIES
 
 add_test(
     NAME ${prefix}_can_Make_Heap_And_Get_Result
-    COMMAND ${APPLICATION} 2 5 16 7 13
+    COMMAND ${APPLICATION} 2 < 5 16 7 13
 )
 set_tests_properties (${prefix}_can_Make_Heap_And_Get_Result PROPERTIES
     PASS_REGULAR_EXPRESSION "Your heap:\n{ size = 4, dim = 2, top = 16 }"
