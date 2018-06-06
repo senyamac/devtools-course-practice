@@ -30,20 +30,3 @@ add_test(
 set_tests_properties (${prefix}_can_Make_Heap_And_Get_Result PROPERTIES
     PASS_REGULAR_EXPRESSION "Your heap:\n{ size = 4, dim = 2, top = 16 }"
     LABELS "${MODULE}")
-
-add_test(
-    NAME ${prefix}_can_Make_Heap_And_Get_Result
-    COMMAND ${APPLICATION} 2 < 5 16 7 13
-)
-set_tests_properties (${prefix}_can_Make_Heap_And_Get_Result PROPERTIES
-    PASS_REGULAR_EXPRESSION "Your heap:\n{ size = 4, dim = 2, top = 16 }"
-    LABELS "${MODULE}")
-
-add_test(
-    NAME ${prefix}_can_Make_Heap_And_Get_Result
-    COMMAND ${APPLICATION} 2 > 5 16 7 13
-)
-set_tests_properties (${prefix}_can_Make_Heap_And_Get_Result PROPERTIES
-    PASS_REGULAR_EXPRESSION "Your heap:\n{ size = 4, dim = 2, top = 5 }"
-    LABELS "${MODULE}")
-
