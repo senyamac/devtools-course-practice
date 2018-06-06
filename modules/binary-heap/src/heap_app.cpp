@@ -88,7 +88,7 @@ std::string HeapApp::operator()(int argc, const char** argv) {
       stream << "size = " << h.size();
       stream << ", dim = " << h.getDim();
       stream << ", top = " << h.top();
-      stream << " }";
+      stream << " }\n";
       message_ = stream.str();
       return message_;
     }
