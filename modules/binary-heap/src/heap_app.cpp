@@ -6,7 +6,7 @@
 #include <fstream>
 #include <functional>
 #include <exception>
-#include <string>
+#include <cstring>
 #include <sstream>
 #include <vector>
 
