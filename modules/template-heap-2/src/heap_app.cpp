@@ -1,10 +1,12 @@
-// Copyright 2018 Mayachkin Arcseny
+// Copyright 2018 Mayachkin Arseny
 
 #include "include/heap.hpp"
 #include "include/heap_app.hpp"
 
 #include <fstream>
+#include <functional>
 #include <exception>
+#include <cstring>
 #include <string>
 #include <sstream>
 #include <vector>
@@ -17,7 +19,8 @@ void HeapApp::help(const char* appname, const char* message) {
   std::string(message) +
   "This is a heap application.\n\n" +
   "Please provide arguments in the following format:\n\n" +
-  "  $ " + appname + " <dimension of heap> <element 1> " +
+  "  $ " + appname + " <dimension of heap> " +
+  "<type of heap, '<' or '>' , optional> "+ "<element 1> " +
   "...<element 2>\n\n" + "Where first argument > 0 " +
   "and all arguments are positive integers\n";
 }
@@ -40,24 +43,55 @@ std::string HeapApp::operator()(int argc, const char** argv) {
     return message_;
   }
   try {
-    int dimension = parseInt(argv[1]);
-    atal::heap<int> h;
-    h.setDim(dimension);
+    if (strcmp(argv[2], "<") == 0) {
+      int dimension = parseInt(argv[1]);
+      atal::heap<int, std::less<int>> h;
+      h.setDim(dimension);
 
-    for (int i = 2; i < argc; i++) {
-      h.push(parseInt(argv[i]));
+      for (int i = 3; i < argc; i++) {
+        h.push(parseInt(argv[i]));
+      }
+      std::ostringstream stream;
+      stream << "Your heap:\n{ ";
+      stream << "size = " << h.size();
+      stream << ", dim = " << h.getDim();
+      stream << ", top = " << h.top();
+      stream << " }\n";
+      message_ = stream.str();
+      return message_;
+    } else if (strcmp(argv[2], ">") == 0) {
+      int dimension = parseInt(argv[1]);
+      atal::heap<int, std::greater<int>> h;
+      h.setDim(dimension);
+
+      for (int i = 3; i < argc; i++) {
+        h.push(parseInt(argv[i]));
+      }
+      std::ostringstream stream;
+      stream << "Your heap:\n{ ";
+      stream << "size = " << h.size();
+      stream << ", dim = " << h.getDim();
+      stream << ", top = " << h.top();
+      stream << " }\n";
+      message_ = stream.str();
+      return message_;
+    } else {
+      int dimension = parseInt(argv[1]);
+      atal::heap<int> h;
+      h.setDim(dimension);
+
+      for (int i = 2; i < argc; i++) {
+        h.push(parseInt(argv[i]));
+      }
+      std::ostringstream stream;
+      stream << "Your heap:\n{ ";
+      stream << "size = " << h.size();
+      stream << ", dim = " << h.getDim();
+      stream << ", top = " << h.top();
+      stream << " }\n";
+      message_ = stream.str();
+      return message_;
     }
-    std::ostringstream stream;
-    stream << "Your heap:\n{ ";
-    stream << "size = " << h.size();
-    stream << ", dim = " << h.getDim();
-    stream << ", top = " << h.top();
-    /* for (unsigned int i = 0; i < h.size(); i++) {
-      stream << h.getHeap(i) << " ";
-    } */
-    stream << " }\n";
-    message_ = stream.str();
-    return message_;
   }
   catch(std::exception& exc) {
     return std::string("Wrong format or value is out of range");
