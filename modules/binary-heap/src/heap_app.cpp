@@ -42,7 +42,7 @@ std::string HeapApp::operator()(int argc, const char** argv) {
     return message_;
   }
   try {
-    if (argv[2].compare("<") == 0) {
+    if (strcmp(argv[2], "<") == 0) {
       int dimension = parseInt(argv[1]);
       atal::heap<int, std::less<int>> h;
       h.setDim(dimension);
@@ -58,7 +58,7 @@ std::string HeapApp::operator()(int argc, const char** argv) {
       stream << " }\n";
       message_ = stream.str();
       return message_;
-    } else if (argv[2].compare(">") == 0) {
+    } else if (strcmp(argv[2], ">") == 0) {
       int dimension = parseInt(argv[1]);
       atal::heap<int, std::greater<int>> h;
       h.setDim(dimension);
