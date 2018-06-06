@@ -7,6 +7,7 @@
 #include <functional>
 #include <exception>
 #include <string>
+#include <string.h>
 #include <sstream>
 #include <vector>
 
