@@ -61,3 +61,19 @@ TEST_F(HeapAppTest, Can_Make_Heap_And_Get_Result) {
 
   Assert("Your heap:\n.*");
 }
+
+TEST_F(HeapAppTest, Can_Work_With_Type_First) {
+    vector<string> args = {"2", "<", "5", "16", "7", "13"};
+
+    Act(args);
+
+    Assert("Your heap:\n.*");
+}
+
+TEST_F(HeapAppTest, Can_Work_With_Type_Second) {
+    vector<string> args = {"2", ">", "5", "16", "7", "13"};
+
+    Act(args);
+
+    Assert("Your heap:\n.*");
+}
