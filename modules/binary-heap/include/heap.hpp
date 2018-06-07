@@ -209,7 +209,7 @@ T heap<T, Compare>::getHeap(int i) {
   if (!empty()) {
       return  m_nodes[i];
   }
-  return 0;
+  return -1;
 }
 }  // namespace atal
 #endif  // MODULES_BINARY_HEAP_INCLUDE_HEAP_HPP_
