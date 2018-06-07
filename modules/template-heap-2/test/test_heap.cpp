@@ -232,7 +232,7 @@ TEST(HeapTest, Check_Delete_Top_With_Changed_Dimension) {
   EXPECT_EQ(h.top(), 7);
 }
 
-TEST(HeapTest, Return_Negative_When_Get_From_Empty_Heap) {
+TEST(HeapTest, Return_Negative_When_Try_Get_From_Empty_Heap) {
   // Arrange
   atal::heap<int> h;
 
