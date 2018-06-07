@@ -1,7 +1,7 @@
 /* Copyright 2018 TolyaTalamanov */
 
-#ifndef MODULES_TEMPLATE_HEAP_2_INCLUDE_HEAP_HPP_
-#define MODULES_TEMPLATE_HEAP_2_INCLUDE_HEAP_HPP_
+#ifndef MODULES_BINARY_HEAP_INCLUDE_HEAP_HPP_
+#define MODULES_BINARY_HEAP_INCLUDE_HEAP_HPP_
 
 #include <iterator>
 #include <vector>
@@ -209,7 +209,7 @@ T heap<T, Compare>::getHeap(int i) {
   if (!empty()) {
       return  m_nodes[i];
   }
-  return 0;
+  return -1;
 }
 }  // namespace atal
-#endif  // MODULES_TEMPLATE_HEAP_2_INCLUDE_HEAP_HPP_
+#endif  // MODULES_BINARY_HEAP_INCLUDE_HEAP_HPP_

@@ -231,3 +231,11 @@ TEST(HeapTest, Check_Delete_Top_With_Changed_Dimension) {
   // Assert
   EXPECT_EQ(h.top(), 7);
 }
+
+TEST(HeapTest, Return_Negative_When_Get_From_Empty_Heap) {
+  // Arrange
+  atal::heap<int> h;
+
+  // Act & Assert
+  EXPECT_EQ(h.getHeap(0), -1);
+}
